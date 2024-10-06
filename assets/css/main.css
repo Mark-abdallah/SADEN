@@ -20,11 +20,12 @@
 } */
 @font-face {
   font-family: 'majallaFont';
-  src: url('/themewagon.github.io/saden-website/assets/fonts/majalla.ttf') format('truetype');
+  src: url('/assets/fonts/majalla.ttf') format('truetype');
 }
+
 @font-face {
   font-family: 'majallabFont';
-  src: url('/themewagon.github.io/saden-website/assets/fonts/majallab.ttf') format('truetype');
+  src: url('/assets/fonts/majallab.ttf') format('truetype');
 }
 
 
@@ -54,14 +55,15 @@ body {
   font-family: var(--font-default);
   color: var(--color-default);
   overflow-x: hidden;
-  
-}
-* {
-  font-size: 105% !important; /* Use !important to override other styles */
-}
-h2{
 
 }
+
+* {
+  font-size: 105% !important;
+  /* Use !important to override other styles */
+}
+
+h2 {}
 
 
 a {
@@ -2722,28 +2724,36 @@ html {
 .footer .footer-legal .credits a {
   color: var(--color-primary);
 }
-.center-icon{
+
+.center-icon {
   margin-top: 20%;
   margin-left: 58%;
 }
-.partners-img{
+
+.partners-img {
   justify-items: center;
   align-items: center;
   margin: 2%;
   max-width: 20%;
   max-height: 10%;
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
 }
+
 .partners-img:hover {
-  transform: scale(1.3); /* Scale up slightly on hover */
-  animation: pulse 1s infinite; /* Apply pulse animation */
+  transform: scale(1.3);
+  /* Scale up slightly on hover */
+  animation: pulse 1s infinite;
+  /* Apply pulse animation */
 }
+
 .notable_projects_container {
-  transition: transform 1s ease; /* Transition for smooth scaling */
+  transition: transform 1s ease;
+  /* Transition for smooth scaling */
 }
 
 .notable_projects_container:hover {
-  transform: scale(1.05); /* Scale the image to 1.3 times its size */
+  transform: scale(1.05);
+  /* Scale the image to 1.3 times its size */
 }
 
 .project-img {
@@ -2754,18 +2764,24 @@ html {
   overflow: hidden;
   aspect-ratio: 16 / 9;
 }
+
 #map {
-  width: 100%;  /* Set the width you need */
-  height: 500px;  /* Adjust the height */
-  overflow: hidden;  /* Prevent overflow */
-  position: relative;  /* Make sure it doesn't overlap */
+  width: 100%;
+  /* Set the width you need */
+  height: 500px;
+  /* Adjust the height */
+  overflow: hidden;
+  /* Prevent overflow */
+  position: relative;
+  /* Make sure it doesn't overlap */
 }
 
 
 .partners-img {
-  width: calc(20% - 20px); /* 4 images per row */
+  width: calc(20% - 20px);
+  /* 4 images per row */
   margin: 10px;
-  
+
 }
 
 #partnersSection {
@@ -2773,20 +2789,168 @@ html {
   justify-content: center;
   align-items: center;
 }
+
 .custom-marker::after {
   content: '';
   position: absolute;
   left: 50%;
-  bottom: -10px; /* Adjust this value to position the triangle */
+  bottom: -10px;
+  /* Adjust this value to position the triangle */
   transform: translateX(-50%);
-  border-left: 6px solid transparent; /* Adjust size as needed */
-  border-right: 6px solid transparent; /* Adjust size as needed */
-  border-top: 10px solid rgb(173, 37, 22); /* Color of the triangle */
-  transition: transform 0.3s; /* Smooth transition for the triangle */
+  border-left: 6px solid transparent;
+  /* Adjust size as needed */
+  border-right: 6px solid transparent;
+  /* Adjust size as needed */
+  border-top: 10px solid rgb(173, 37, 22);
+  /* Color of the triangle */
+  transition: transform 0.3s;
+  /* Smooth transition for the triangle */
 }
 
 .custom-marker:hover::after {
-  transform: translateX(-50%) scale(1.1); /* Scale up on hover */
+  transform: translateX(-50%) scale(1.1);
+  /* Scale up on hover */
+}
+
+.cert-img {
+  width: 20%;
+  /* Adjust the width for desktop view */
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 20%;
+  /* Adjusts logo size for larger screens */
+  max-width: 100%;
+  /* Ensures the logo does not overflow */
+  height: auto;
+  /* Keeps the image proportionate */
+}
+
+.logo h1 {
+  width: 100%;
+  font-size: 2rem;
+  /* Adjust font size for large screens */
+  margin-left: 10px;
+  /* Add some space between the image and the text */
+}
+
+/* Custom styles */
+.navbar-brand img {
+  max-width: 100px;
+}
+
+
+
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .partners-img {
+    max-width: 50%;
+    /* Increase width to fit better on mobile */
+    max-height: auto;
+    /* Allow the image to scale naturally */
+    margin: 5%;
+    /* Adjust margin for better spacing on mobile */
+  }
+
+  .cert-img {
+    width: 40%;
+    /* Increase the width on smaller screens */
+    margin: 5px;
+  }
+
+  .partners-img {
+    width: calc(40% - 20px);
+    /* 4 images per row */
+    margin: 10px;
+
+  }
+
+  .project-img {
+    height: 25vw;
+    /* Adjust height for smaller screens */
+    border-radius: 3px;
+    /* Slightly reduce the border radius */
+  }
+
+  .logo img {
+    width: 30%;
+    /* Increase the width for better visibility on smaller screens */
+  }
+
+  .logo h1 {
+    font-size: 1.7rem !important;
+    /* Decrease font size for smaller screens */
+    text-align: center;
+    /* Center the text */
+    margin-left: 0;
+    /* Remove the margin to center text properly */
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .partners-img {
+    max-width: 80%;
+    /* Further adjust for smaller screens */
+    max-height: auto;
+    margin: 5%;
+    /* Keep larger margin for spacing */
+  }
+
+  .partners-img {
+    width: calc(40% - 20px);
+    /* 4 images per row */
+    margin: 10px;
+
+  }
+
+  .cert-img {
+    width: 80%;
+    /* Stack the images with a larger width on very small screens */
+    margin: 5px;
+  }
+
+  .project-img {
+    height: auto;
+    /* Let the image height adjust automatically */
+    width: 100%;
+    /* Ensure it fits the full width of the container */
+    aspect-ratio: 4 / 3;
+    /* Adjust the aspect ratio for smaller screens */
+    border-radius: 2px;
+    /* Further reduce the border radius */
+  }
+
+  .logo {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+  }
+
+  .logo img {
+    width: 30%;
+    /* Increase the logo width on very small screens */
+    margin-bottom: 10px;
+    /* Add space between the image and text on small screens */
+  }
+
+  .logo h1 {
+    font-size: 1.7rem !important;
+    /* Further reduce font size for smaller screens */
+    text-align: center;
+    /* Keep text centered */
+    line-height: 1.4;
+    /* Adjust line height for better readability */
+  }
 }
 
 
@@ -2794,9 +2958,12 @@ html {
   0% {
     transform: scale(1.1);
   }
+
   50% {
-    transform: scale(1.2); /* Scale up more for pulse effect */
+    transform: scale(1.2);
+    /* Scale up more for pulse effect */
   }
+
   100% {
     transform: scale(1.1);
   }

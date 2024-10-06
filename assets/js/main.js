@@ -1,9 +1,4 @@
-/**
-* Template Name: UpConstruction - v1.3.0
-* Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
 
@@ -206,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
       mirror: false
     });
     function loadLanguage(lang) {
-      fetch(`/themewagon.github.io/saden-website/translation/${lang}.json`)
+      fetch(`/translation/${lang}.json`)
         .then(response => response.json())
         .then(data => {
           document.querySelectorAll('[data-translate]').forEach(element => {
@@ -321,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let index = 0; index < partners.length; index++) {
       const partner = partners[index];
       $('#partnersSection').append(
-        `<img src="${partner.src}" class="partners-img " alt="${partner.alt}">`
+        `<img src="${partner.src}" class="partners-img col-lg-3 col-md-4 " alt="${partner.alt}">`
       );
     }
   }

@@ -38,7 +38,7 @@ $(document).ready(function() {
             if(serviceDetailsObj.notableProjects){
                 serviceDetailsObj.notableProjects.forEach(project => {
                     const projectDiv = $('<div class="col-sm-3 d-flex notable_projects_container m-2"></div>');
-                    const projectLink = $('<a></a>').attr('href', `ProjectLink.html?id=${project.id}`);
+                    const projectLink = $('<a></a>').attr('href', `#`);
                     const projectImg = $('<img class="img-fluid project-img shadow-lg">').attr('src', project.imageUrl).attr('alt', project.name);
                     const projectTitle = $('<span class="text-black"></span>').attr('data-translate',project.name);
                     

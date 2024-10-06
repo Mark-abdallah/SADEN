@@ -6,7 +6,7 @@ $(document).ready(function() {
         const portfolioItemHTML = `
             <div class="col-lg-4 col-md-6 col-sm-10 portfolio-item filter-${getKeyByValue(ServicesEnum,item.serviceId)}">
                 <div class="portfolio-content h-100">
-                    <img src="${item.imageUrl}" class="img-fluid project-img" alt="${item.name}">
+                    <img src="${item.imageUrl}" class="img-fluid project-img h-100" alt="${item.name}">
                     <div class="portfolio-info">
                         <h4 data-translate="${item.name}">${item.name}</h4>
                     </div>
