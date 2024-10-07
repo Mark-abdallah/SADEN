@@ -174,17 +174,41 @@ $(document).ready(function () {
     for (let index = 0; index < branchesData.length; index++) {
         const branch = branchesData[index];
         let branchHTML = `
-        <div class="col-lg-4 col-md-6 rounded-3" data-aos="fade-up" data-aos-delay="100">
-        <div class="service-item  position-relative">
-            <h3 data-translate="${branch.name}">${branch.name}</h3>
-            <p class="p-2"><i class="bi bi-geo-alt-fill m-1"></i> <span class="" data-translate="branch_address"></span>: <span data-translate="${branch.address}"></span> </p>
-            <p class="p-2"><i class="bi bi-telephone m-1" ></i><span data-translate="branch_phone_number"></span>${" : " +branch.phone}</p>
-            <p class="p-2"><i class="bi bi-envelope m-1"></i>  <a href="mailto:${branch.email}" data-translate="branch_email"></a><span>${" : " + branch.email}</span></p>
-            <p class="p-2"><i class="bi bi-map m-1"></i> <a href="${branch.googleMapsLink}" target="_blank" data-translate= "branch_location">موقع الفرع</a></p>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item p-3 rounded-3 border shadow-sm position-relative h-100">
+                <!-- Show name on all views -->
+                <h3 class="text-center" data-translate="${branch.name}">${branch.name}</h3>
+                
+                <!-- Address: Show icon only on small screens, full text on larger screens -->
+                <p class="p-2">
+                    <i class="bi bi-geo-alt-fill m-1"></i>
+                    <span class="d-none d-md-inline" data-translate="branch_address"></span>
+                    <span><span data-translate="${branch.address}"></span></span>
+                </p>
+                
+                <!-- Phone: Icon only on small screens, full text on larger screens -->
+                <p class="p-2">
+                    <i class="bi bi-telephone m-1"></i>
+                    <span class="d-none d-md-inline" data-translate="branch_phone_number"></span>
+                    <span >: ${branch.phone}</span>
+                </p>
+                
+                <!-- Email: Icon only on small screens, full text on larger screens -->
+                <p class="p-2">
+                    <i class="bi bi-envelope m-1"></i>
+                    <a href="mailto:${branch.email}" class="d-none d-md-inline" data-translate="branch_email"></a>
+                    <span>: ${branch.email}</span>
+                </p>
+                
+                <!-- Google Maps link: Icon only on small screens, full text on larger screens -->
+                <p class="p-2">
+                    <i class="bi bi-map m-1"></i>
+                    <a href="${branch.googleMapsLink}" target="_blank" data-translate="branch_location">موقع الفرع</a>
+                </p>
+            </div>
         </div>
-        </div>
-    `;
+        `;
     
-    $('#branches_container').append(branchHTML);
+        $('#branches_container').append(branchHTML);
     }
 })

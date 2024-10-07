@@ -59,7 +59,7 @@ body {
 }
 
 * {
-  font-size: 105% !important;
+  font-size: 102% !important;
   /* Use !important to override other styles */
 }
 
@@ -2903,6 +2903,10 @@ html {
     max-height: auto;
     margin: 5%;
     /* Keep larger margin for spacing */
+  }
+  .header .logo img {
+    max-height: 0%;
+    margin-right: 0px;
   }
 
   .partners-img {
