@@ -28,6 +28,8 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
 </head>
 
 <body>
@@ -65,7 +67,7 @@
             <div class="info-item d-flex flex-column justify-content-center align-items-center">
               <i class="bi bi-envelope"></i>
               <h3 data-translate="email_label">email</h3>
-              <p data-translate="email"></p>
+              <p>main@saden.sa</p>
             </div>
           </div><!-- End Info Item -->
 
@@ -73,7 +75,7 @@
             <div class="info-item  d-flex flex-column justify-content-center align-items-center">
               <i class="bi bi-telephone"></i>
               <h3 data-translate="callUs">callUs</h3>
-              <p>00966551706008</p>
+              <p>00966553095051</p>
             </div>
           </div><!-- End Info Item -->
 
@@ -82,7 +84,9 @@
         <div class="row gy-4 mt-1">
 
           <div class="col-lg-6 ">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d424.7596504520741!2d42.7262924434467!3d18.33577837829076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15fb5bdefc93e625%3A0xbab9156f58f89aa8!2z2LTYsdmD2Kkg2LPYp9iv2YYg2YTZhNin2LPYqti02KfYsdin2Kog2KfZhNis2YrZiNmE2YjYrNmK2Kkg2YjYp9mE2YfZitiv2LHZiNmE2YjYrNmK2KkgKCDZhdmD2KrYqCDYp9io2YjYrdin2YjZiSDYs9in2KjZgtinICk!5e1!3m2!1sen!2seg!4v1728135298535!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div id="map" class="m-3 shadow-lg rounded-lg w-100" 
+            style="height: 50vw; max-height: 500px; position: relative;">
+        </div>
           </div><!-- End Google Maps -->
 
           <div class="col-lg-6">
@@ -144,7 +148,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <!-- <script src="assets/js/contact.js"></script> -->
+  <script src="assets/js/branches.js"></script>
 
 </body>
 

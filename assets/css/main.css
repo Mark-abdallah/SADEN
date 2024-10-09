@@ -27,13 +27,31 @@
   font-family: 'majallabFont';
   src: url('/assets/fonts/majallab.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'sultanBold';
+  src: url('/assets/fonts/Sultan-bold.ttf') format('truetype');
+}
 
-
-
-:root {
+[data-lang='arabic'] {
   --font-default: "majallabFont";
   --font-primary: "majallabFont";
   --font-secondary: "majallaFont";
+}
+
+[data-lang='arabic'] h1, 
+[data-lang='arabic'] h2, 
+[data-lang='arabic'] h3, 
+[data-lang='arabic'] h4, 
+[data-lang='arabic'] h5, 
+[data-lang='arabic'] h6 {
+  font-family: "sultanBold";
+}
+
+
+
+[data-lang='en'] {
+  --primary-font: 'Arial, sans-serif'; /* Font for English */
+  font-size: 90% !important;
 }
 
 /* Colors */
@@ -57,13 +75,32 @@ body {
   overflow-x: hidden;
 
 }
-
-* {
-  font-size: 102% !important;
-  /* Use !important to override other styles */
+.logo-container {
+  position: relative;
+  display: inline-block; /* Allows the logo to be treated as an inline element */
+}
+.fade-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.878), rgba(255, 255, 255, 0)); /* White to transparent */
+  border-radius: 10px; /* Optional rounding */
 }
 
-h2 {}
+.logo img {
+  position: relative;
+  z-index: 5;
+}
+.bg-color-mobile-menu{
+  background-color: transparent !important;
+}
+
+* {
+  font-size: 104% !important;
+  /* Use !important to override other styles */
+}
 
 
 a {
@@ -2859,6 +2896,10 @@ html {
     margin: 5%;
     /* Adjust margin for better spacing on mobile */
   }
+  .bg-color-mobile-menu{
+    background-color: white !important;
+
+  }
 
   .cert-img {
     width: 40%;
@@ -2907,6 +2948,9 @@ html {
   .header .logo img {
     max-height: 0%;
     margin-right: 0px;
+  }
+  .bg-color-mobile-menu{
+    background-color: white;
   }
 
   .partners-img {

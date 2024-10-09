@@ -1,21 +1,21 @@
 $(document).ready(function () {
     mapboxgl.accessToken = 'pk.eyJ1IjoibWFya2FiZGFsYWgiLCJhIjoiY20xbWpoNTk5MGhuMTJpcXR5NGJocjZ3eSJ9.1a0FXJTLfZ1npTTu-N323A';
     const branchLocations = [
-        { name: 'Jada Branch', coords: [39.237402, 21.552336] },
-        { name: 'Maka brach', coords: [39.967289, 21.462635] },
-        { name: 'taif Branch', coords: [40.453389, 21.348311] },
-        { name: 'el-madina el monawara Branch', coords: [39.694371, 24.502044] },
-        { name: 'al-kosayem Branch', coords: [43.952185, 26.361112] },
-        { name: 'haiel Branch', coords: [41.687953, 27.524177] },
-        { name: 'Tabouk Branch', coords: [41.687953, 27.524177] },
-        { name: 'Riyahd Branch', coords: [46.788006, 24.742172] },
-        { name: 'khames masheet Branch', coords: [42.726581, 18.335424] },
-        { name: 'Jazan Branch', coords: [42.564717, 16.891728] },
-        { name: 'Besha Branch', coords: [42.599746, 19.985025] },
-        { name: 'Sakaka Branch', coords: [40.196352, 29.964209] },
-        { name: 'Al-Damam Branch', coords: [50.119191, 26.438510] },
-        { name: 'hafr Al-baten Branch', coords: [45.96689778799614, 28.433401373826317] },
-        { name: 'Cairo, Egypt Branch', coords: [31.341389, 30.049564] },
+        {  name: 'jada_address', coords: [39.237402, 21.552336] ,googleMapsLink:"https://maps.google.com/?q=21.552280144012897, 39.23740527590339"},
+        { name: 'Maka brach', coords: [39.967289, 21.462635] ,googleMapsLink:"https://maps.google.com/?q=21.46282751521347, 39.9673224668048"},
+        { name: 'taif Branch', coords: [40.453389, 21.348311] ,googleMapsLink:"https://maps.google.com/?q=21.35821765641219, 40.46137512447157"},
+        { name: 'el-madina el monawara Branch', coords: [39.694371, 24.502044] ,googleMapsLink:"https://maps.google.com/?q=24.44728443317785, 39.64534949572878"},
+        { name: 'al-kosayem Branch', coords: [43.952185, 26.361112] ,googleMapsLink:"https://maps.google.com/?q=26.36092317408667, 43.95197378229638"},
+        { name: 'haiel Branch', coords: [41.687953, 27.524177] ,googleMapsLink:"https://maps.google.com/?q=27.524258536556253, 41.68805405350174"},
+        { name: 'Tabouk Branch', coords: [41.687953, 27.524177] ,googleMapsLink:"https://maps.google.com/?q=28.395644316819087, 36.581681224697995"},
+        { name: 'Riyahd Branch', coords: [46.788006, 24.742172] ,googleMapsLink:"https://maps.google.com/?q=24.780201598957568, 46.81039609573928"},
+        { name: 'khames masheet Branch', coords: [42.726581, 18.335424] ,googleMapsLink:"https://maps.google.com/?q=18.33581118909235, 42.726537495558276"},
+        { name: 'Jazan Branch', coords: [42.564717, 16.891728] ,googleMapsLink:"https://maps.google.com/?q=16.89174523803875, 42.564712880185155"},
+        { name: 'Besha Branch', coords: [42.599746, 19.985025] ,googleMapsLink:"https://maps.google.com/?q=19.9996,42.6256"},
+        { name: 'Sakaka Branch', coords: [40.196352, 29.964209] ,googleMapsLink:"https://maps.google.com/?q=29.964365233729193, 40.19652578242635"},
+        { name: 'Al-Damam Branch', coords: [50.119191, 26.438510] ,googleMapsLink:"https://maps.google.com/?q=26.423123393293746, 50.114230538123984"},
+        { name: 'hafr Al-baten Branch', coords: [45.96689778799614, 28.433401373826317] ,googleMapsLink:"https://maps.google.com/?q=28.4322,45.9703"},
+        { name: 'Cairo, Egypt Branch', coords: [31.341389, 30.049564] ,googleMapsLink:"https://maps.google.com/?q=30.049744206967468, 31.341384367090193"},
     ];
     const map = new mapboxgl.Map({
         container: 'map',
@@ -23,6 +23,7 @@ $(document).ready(function () {
         center: [45.0792, 23.8859], // Center on Saudi Arabia
         zoom: 4
     });
+    map.addControl(new mapboxgl.NavigationControl());
     // Custom icon URL
     const customIconUrl = 'assets/img/logo.png'; // Replace with your icon URL
 
@@ -49,11 +50,15 @@ $(document).ready(function () {
         markerElement.style.alignItems = 'center'; // Center vertically
 
 
-        new mapboxgl.Marker(markerElement)
-            .setLngLat(branch.coords)
-            .setPopup(new mapboxgl.Popup().setHTML(`<h4>${branch.name}</h4>`)) // Optional: add a popup with the branch name
-            .addTo(map);
+            markerElement.addEventListener('click', () => {
+                window.location.href = branch.googleMapsLink;
+            });
+
+        //loadLanguage()
     });
+   
+
+    
     const branchesData =[
         {
             name: "jada_branch",
@@ -183,7 +188,7 @@ $(document).ready(function () {
                 <p class="p-2">
                     <i class="bi bi-geo-alt-fill m-1"></i>
                     <span class="d-none d-md-inline" data-translate="branch_address"></span>
-                    <span><span data-translate="${branch.address}"></span></span>
+                    <span><a href="${branch.googleMapsLink}" target="_blank"><span data-translate="${branch.address}"></span></a></span>
                 </p>
                 
                 <!-- Phone: Icon only on small screens, full text on larger screens -->

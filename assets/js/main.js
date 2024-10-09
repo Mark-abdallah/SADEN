@@ -16,21 +16,25 @@ document.addEventListener('DOMContentLoaded', () => {
    * Mobile nav toggle
    */
 
-  const mobileNavShow = document.querySelector('.mobile-nav-show');
-  const mobileNavHide = document.querySelector('.mobile-nav-hide');
+  setTimeout(function(){
+    const mobileNavShow = document.querySelector('.mobile-nav-show');
+    const mobileNavHide = document.querySelector('.mobile-nav-hide');
 
-  document.querySelectorAll('.mobile-nav-toggle').forEach(el => {
-    el.addEventListener('click', function (event) {
-      event.preventDefault();
-      mobileNavToogle();
-    })
-  });
+    document.querySelectorAll('.mobile-nav-toggle').forEach(el => {
+        el.addEventListener('click', function (event) {
+            event.preventDefault();
+            console.log("Toggle Clicked"); // Debugging
+            mobileNavToggle();
+        });
+    });
 
-  function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavShow.classList.toggle('d-none');
-    mobileNavHide.classList.toggle('d-none');
-  }
+    function mobileNavToggle() {
+        document.querySelector('body').classList.toggle('mobile-nav-active');
+        mobileNavShow.classList.toggle('d-none');
+        mobileNavHide.classList.toggle('d-none');
+    }
+    console.log("Toggle Clicked"); // Debugging
+},1000)
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -192,7 +196,31 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Animation on scroll function and init
    */
-  
+  function loadLanguage(lang) {
+   if(!lang){
+     lang = localStorage.getItem("selectedLanguage")
+   }
+    fetch(`/translation/${lang}.json`)
+      .then(response => response.json())
+      .then(data => {
+        document.querySelectorAll('[data-translate]').forEach(element => {
+          const key = element.getAttribute('data-translate');
+          if (data[key]) {
+            element.innerHTML = data[key];
+            element.setAttribute('dir', lang === 'arabic' ? 'rtl' : 'ltr');
+          }
+        });
+        const isArabic = lang === 'arabic';
+        
+        // Update the document attributes
+        document.documentElement.setAttribute('dir', isArabic ? 'rtl' : 'ltr');
+        document.documentElement.setAttribute('lang', isArabic ? 'ar' : 'en');
+        
+        // Change the font based on the language
+        document.documentElement.setAttribute('data-lang', isArabic ? 'arabic' : 'en');
+      })
+      .catch(error => console.error('Error loading translation:', error));
+}
   function aos_init() {
     AOS.init({
       duration: 800,
@@ -200,23 +228,9 @@ document.addEventListener('DOMContentLoaded', () => {
       once: true,
       mirror: false
     });
-    function loadLanguage(lang) {
-      fetch(`/translation/${lang}.json`)
-        .then(response => response.json())
-        .then(data => {
-          document.querySelectorAll('[data-translate]').forEach(element => {
-            const key = element.getAttribute('data-translate');
-            if (data[key]) {
-              element.innerHTML = data[key];
-              element.setAttribute('dir', lang === 'arabic' ? 'rtl' : 'ltr');
+    
+   
   
-            }
-          });
-          document.documentElement.setAttribute('dir', lang === 'arabic' ? 'rtl' : 'ltr');
-          document.documentElement.setAttribute('lang', lang === 'arabic' ? 'ar' : 'en');
-        })
-        .catch(error => console.error('Error loading translation:', error));
-    }
     //loading header
     fetch('components/header.html')
       .then(response => response.text())
@@ -642,6 +656,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.ServicesEnum = ServicesEnum
   window.projects = projects
   window.getKeyByValue = getKeyByValue
-
-
+  window.loadLanguage = loadLanguage
 });
