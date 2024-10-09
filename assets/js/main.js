@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * Mobile nav toggle
    */
 
-  setTimeout(function(){
+  setInterval(function(){
     const mobileNavShow = document.querySelector('.mobile-nav-show');
     const mobileNavHide = document.querySelector('.mobile-nav-hide');
 
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileNavHide.classList.toggle('d-none');
     }
     console.log("Toggle Clicked"); // Debugging
-},1000)
+},50000)
 
   /**
    * Hide mobile nav on same-page/hash links
