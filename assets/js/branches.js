@@ -50,11 +50,12 @@ $(document).ready(function () {
         markerElement.style.alignItems = 'center'; // Center vertically
 
 
+        new mapboxgl.Marker(markerElement)
+        .setLngLat(branch.coords)
+        .addTo(map);
             markerElement.addEventListener('click', () => {
                 window.location.href = branch.googleMapsLink;
             });
-
-        //loadLanguage()
     });
    
 
