@@ -85,7 +85,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.878), rgba(255, 255, 255, 0)); /* White to transparent */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.924), rgba(255, 255, 255, 0.079)); /* White to transparent */
   border-radius: 10px; /* Optional rounding */
 }
 
