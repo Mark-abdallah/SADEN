@@ -16,25 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
    * Mobile nav toggle
    */
 
-  setTimeout(function(){
-    const mobileNavShow = document.querySelector('.mobile-nav-show');
-    const mobileNavHide = document.querySelector('.mobile-nav-hide');
-
-    document.querySelectorAll('.mobile-nav-toggle').forEach(el => {
-        el.addEventListener('click', function (event) {
-            event.preventDefault();
-            console.log("Toggle Clicked"); // Debugging
-            mobileNavToggle();
-        });
-    });
-
-    function mobileNavToggle() {
-        document.querySelector('body').classList.toggle('mobile-nav-active');
-        mobileNavShow.classList.toggle('d-none');
-        mobileNavHide.classList.toggle('d-none');
-    }
-    console.log("Toggle Clicked"); // Debugging
-},1000)
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -233,25 +214,42 @@ document.addEventListener('DOMContentLoaded', () => {
   
     //loading header
     fetch('components/header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header').innerHTML = data;
-        document.getElementById('languageSwitcher').addEventListener('change', function () {
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+      initializeHeaderScripts();
+    });
+  
+  function initializeHeaderScripts() {
+      document.getElementById('languageSwitcher').addEventListener('change', function () {
           const selectedLanguage = this.value;
-          localStorage.setItem('selectedLanguage', selectedLanguage)
+          localStorage.setItem('selectedLanguage', selectedLanguage);
           loadLanguage(selectedLanguage);
-        });
-
-        let selectedLanguage = localStorage.getItem("selectedLanguage")
-        if(!selectedLanguage){
+      });
+      let selectedLanguage = localStorage.getItem("selectedLanguage");
+      if (!selectedLanguage) {
           document.getElementById('languageSwitcher').value = 'english';
           loadLanguage('english');
-        }else{
+      } else {
           loadLanguage(selectedLanguage);
           document.getElementById('languageSwitcher').value = selectedLanguage;
-
-        }
+      }
+      const mobileNavShow = document.querySelector('.mobile-nav-show');
+      const mobileNavHide = document.querySelector('.mobile-nav-hide');
+  
+      document.querySelectorAll('.mobile-nav-toggle').forEach(el => {
+          el.addEventListener('click', function (event) {
+              event.preventDefault();
+              mobileNavToggle();
+          });
       });
+      function mobileNavToggle() {
+          document.querySelector('body').classList.toggle('mobile-nav-active');
+          mobileNavShow.classList.toggle('d-none');
+          mobileNavHide.classList.toggle('d-none');
+      }
+  }
+  
 
     // Load Footer
     fetch('components/footer.html')
@@ -265,11 +263,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }else{
         loadLanguage(selectedLanguage)
       }
+
+     
   }
   window.addEventListener('load', () => {
     aos_init();
     loadPartners();
   });
+  
 
   function loadPartners() {
     var partners = [
