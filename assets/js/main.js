@@ -565,19 +565,19 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 2,
       serviceId: ServicesEnum.GEOTECHNICAL_STUDIES,
       name: "Project_constructing_27_dams",
-      imageUrl: "assets/img/Projects/project_2_1.jpg"
+      imageUrl: "assets/img/Projects/why-is-it-called-civil-engineering-1699953005.jpg"
     },
     {
       id: 3,
       serviceId: ServicesEnum.HYDROLOGICAL_STUDIES,
       name: "Project_asir_bisha",
-      imageUrl: "assets/img/Projects/project_3_1.jfif"
+      imageUrl: "assets/img/Projects/istockphoto-158953693-612x612.jpg"
     },
     {
       id: 4,
       serviceId: ServicesEnum.HYDROLOGICAL_STUDIES,
       name: "Project_saabar",
-      imageUrl: "assets/img/Projects/project_4_1.jfif"
+      imageUrl: "assets/img/Projects/instruments-used-in-engineering-drawings.webp"
     },
     {
       id: 5,
@@ -601,24 +601,24 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 6,
       serviceId: ServicesEnum.GEOLOGICAL_STUDIES,
       name: "PROJECT_DAM_SAFETY",
-      imageUrl: "assets/img/Projects/project_8_1.jfif"
+      imageUrl: "assets/img/Projects/civil-engineer-at-work-LJFEGK4_edited.jpg"
     },
     {
       id: 7,
       serviceId: ServicesEnum.GEOLOGICAL_STUDIES,
       name: "PROJECT_MODEL_VILLAGE",
-      imageUrl: "assets/img/Projects/project_9_1.jfif"
+      imageUrl: "assets/img/Projects/1673349646Best-Universities-to-Study-Civil-Engineering-in-USA.jpg"
     },
     {
       id: 8,
       serviceId: ServicesEnum.MINING_STUDIES,
       name: "PROJECT_KOALIN_EXPLORATION",
-      imageUrl: "assets/img/Projects/project_2_2.jpg"
+      imageUrl: "assets/img/driller.jpg"
     }, {
       id: 9,
       serviceId: ServicesEnum.SURVEYING_WORKS,
       name: "PROJECT_KIND_KHALD",
-      imageUrl: "assets/img/Projects/project_10_1.jfif"
+      imageUrl: "assets/img/Projects/GMIT-Mayo-Campus-20140409-_DSC9354.jpg"
     }, {
       id: 18,
       serviceId: ServicesEnum.ASPHALT_TESTING,
@@ -635,7 +635,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 20,
       serviceId: ServicesEnum.ASPHALT_TESTING,
       name: "paving_asphalting_lighting_dana_al_janoub_project",
-      imageUrl: "assets/img/Projects/project_13_3.jpg"
+      imageUrl: "assets/img/Projects/weg-en-waterbouw-1-1.jpg"
     },
     {
       id: 21,
