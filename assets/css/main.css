@@ -50,8 +50,9 @@
 
 
 [data-lang='en'] {
-  --primary-font: 'Arial, sans-serif'; /* Font for English */
-  font-size: 90% !important;
+  --font-default: "majallabFont";
+  --font-primary: "majallabFont";
+  --font-secondary: "majallaFont";
 }
 
 /* Colors */
