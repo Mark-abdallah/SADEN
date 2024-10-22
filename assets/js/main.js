@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { src: "assets/img/partners/partner-4.png", alt: "partner-4" },
       { src: "assets/img/partners/partner-5.png", alt: "partner-5" },
       { src: "assets/img/partners/partner-6.png", alt: "partner-6" },
-      { src: "assets/img/partners/partner-7.png", alt: "partner-7" },
+      { src: "assets/img/certifications/cert-6.jpeg", alt: "partner-7" },
       { src: "assets/img/partners/partner-8.png", alt: "partner-8" },
       { src: "assets/img/partners/partner-9.png", alt: "partner-9" },
       { src: "assets/img/partners/partner-10.png", alt: "partner-10" },

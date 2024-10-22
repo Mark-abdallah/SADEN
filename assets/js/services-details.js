@@ -28,9 +28,9 @@ $(document).ready(function() {
             this.$serviceSubServices.empty();
             serviceDetailsObj.serviceSubServices.forEach(subService => {
                 const li = $('<li></li>'); // Create a new <li> element
-                const icon = $('<i class="bi bi-check-circle m-2"></i>'); // Create the icon element
+              //  const icon = $('<i class="bi bi-check-circle m-2"></i>'); // Create the icon element
                 const span = $('<span></span>').attr('data-translate', subService ); // Create the <span> with the subService text
-                li.append(icon); // Append the icon to the <li>
+               // li.append(icon); // Append the icon to the <li>
                 li.append(span); // Append the <span> to the <li>
                 this.$serviceSubServices.append(li); // Append the <li> to the <ul>
             });
@@ -38,7 +38,7 @@ $(document).ready(function() {
             if(serviceDetailsObj.notableProjects){
                 serviceDetailsObj.notableProjects.forEach(project => {
                     const projectDiv = $('<div class="col-sm-3 d-flex notable_projects_container m-2"></div>');
-                    const projectLink = $('<a></a>').attr('href', `#`);
+                    const projectLink = $('<div></div>');
                     const projectImg = $('<img class="img-fluid project-img shadow-lg">').attr('src', project.imageUrl).attr('alt', project.name);
                     const projectTitle = $('<span class="text-black"></span>').attr('data-translate',project.name);
                     
@@ -53,7 +53,7 @@ $(document).ready(function() {
             if(serviceDetailsObj.importantDevices){
                 serviceDetailsObj.importantDevices.forEach(project => {
                     const projectDiv = $('<div class="col-sm-3 d-flex notable_projects_container m-2"></div>');
-                    const projectLink = $('<a></a>').attr('href', `ProjectLink.html?id=${project.id}`);
+                    const projectLink = $('<div></div>');
                     const projectImg = $('<img class="img-fluid project-img shadow-lg">').attr('src', project.imageUrl).attr('alt', project.name);
                     const projectTitle = $('<span class="text-black"></span>').attr('data-translate',project.name);
                     

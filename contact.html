@@ -91,34 +91,29 @@
 
           <div class="col-lg-6">
             <form id="contactForm" role="form" class="php-email-form">
-                <div class="row gy-4">
-                    <div class="col-lg-6 form-group">
-                        <label data-translate="name_placeholder">Name</label>
-                        <input type="text" name="name" class="form-control" id="name" data-translate="name_placeholder" required>
-                    </div>
-                    <div class="col-lg-6 form-group">
-                        <label data-translate="email_placeholder">Email</label>
-                        <input type="email" class="form-control" name="email" id="email" data-translate="email_placeholder" required>
-                    </div>
+              <div class="row gy-4">
+                <div class="col-lg-6 form-group">
+                  <label for="name" data-translate="name_placeholder">Name</label>
+                  <input type="text" name="name" class="form-control" id="name" data-translate="name_placeholder" required>
                 </div>
-                <div class="form-group">
-                    <label data-translate="subject_placeholder">Subject</label>
-                    <input type="text" class="form-control" name="subject" id="subject" data-translate="subject_placeholder" required>
+                <div class="col-lg-6 form-group">
+                  <label for="email" data-translate="email_placeholder">Email</label>
+                  <input type="email" class="form-control" name="email" id="email" data-translate="email_placeholder" required>
                 </div>
-                <div class="form-group">
-                    <textarea class="form-control" name="message" rows="5" data-translate="message_placeholder" required></textarea>
-                </div>
-                <div class="my-3">
-                    <div class="loading" data-translate="loading">Loading...</div>
-                    <div class="error-message" style="display: none;"></div>
-                    <div class="sent-message" style="display: none;" data-translate="sent_message">Message sent successfully!</div>
-                </div>
-                <div class="text-center">
-                    <button type="submit" data-translate="send_request">Send Request</button>
-                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject" data-translate="subject_placeholder">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" data-translate="subject_placeholder" required>
+              </div>
+              <div class="form-group">
+                <label for="message" data-translate="message_placeholder">Message</label>
+                <textarea class="form-control" name="message" id="message" rows="5" data-translate="message_placeholder" required></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" data-translate="send_request">Send Request</button>
+              </div>
             </form>
-        </div><!-- End Contact Form -->
-
+          </div>
         </div>
 
       </div>

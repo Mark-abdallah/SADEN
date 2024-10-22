@@ -217,4 +217,17 @@ $(document).ready(function () {
     
         $('#branches_container').append(branchHTML);
     }
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var subject = document.getElementById('subject').value;
+        var message = document.getElementById('message').value;
+        var mailtoLink = 'mailto:main@saden.sa' +
+            '?subject=' + encodeURIComponent(subject) +
+            '&body=' + encodeURIComponent('Name: ' + name + '\n' +
+                'Email: ' + email + '\n\n' +
+                'Message: ' + message);
+        window.location.href = mailtoLink;
+    });
 })
