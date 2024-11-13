@@ -15,6 +15,7 @@ $(document).ready(function () {
         { name: 'Sakaka Branch', coords: [40.196352, 29.964209] ,googleMapsLink:"https://maps.google.com/?q=29.964365233729193, 40.19652578242635"},
         { name: 'Al-Damam Branch', coords: [50.119191, 26.438510] ,googleMapsLink:"https://maps.google.com/?q=26.423123393293746, 50.114230538123984"},
         { name: 'hafr Al-baten Branch', coords: [45.96689778799614, 28.433401373826317] ,googleMapsLink:"https://maps.google.com/?q=28.4322,45.9703"},
+        { name: 'tabouk', coords: [36.581797,28.395489] ,googleMapsLink:"https://maps.app.goo.gl/ygwXHMCMyZdAsARV9"},
         { name: 'Cairo, Egypt Branch', coords: [31.341389, 30.049564] ,googleMapsLink:"https://maps.google.com/?q=30.049744206967468, 31.341384367090193"},
     ];
     const map = new mapboxgl.Map({

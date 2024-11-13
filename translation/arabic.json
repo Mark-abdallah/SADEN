@@ -100,7 +100,7 @@
   "Soil_Stabilization": "استقرار التربة",
   "Water_infiltration": "تسلل المياه",
   "Geotechnical_Instrumentation_and_Monitoring": "أدوات ومراقبة الجيوتقنية",
-  "Project_studying_and_Evaluation_Rocksfall_in_Jazan": "مشروع لدراسة وتقييم سقوط الصخور في جازان",
+  "Project_studying_and_Evaluation_Rocksfall_in_Jazan": "دراسة وتقييم مواقع الانهيارات الصخرية بمدينة جازان",
   "Project_constructing_27_dams": "مشروع لإنشاء 27 سداً في المناطق الجنوبية والغربية",
   "Flood_Risk_Mapping": "تخطيط مخاطر الفيضانات",
   "Flood_Hazard_Evaluation": "تقييم مخاطر الفيضانات",
@@ -230,5 +230,6 @@
     "Certifications":"الاعتمادات",
     "callUs":"أتصل بنا",
     "subject_placeholder":"الموضوع",
-    "certificates_description":"نحن نفخر بشهادات الاعتماد لدينا، مما يضمن أعلى معايير الاستشارات الجيولوجية."
+    "certificates_description":"نحن نفخر بشهادات الاعتماد لدينا، مما يضمن أعلى معايير الاستشارات الجيولوجية.",
+    "login":"تسجيل الدخول"
 }
